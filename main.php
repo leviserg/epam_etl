@@ -30,17 +30,17 @@
         echo SimpleXLSX::parseError();
     }
 
-function transformData($data){
-    $ret = [];
-    $keys = $data[0];
-    for($i = 1; $i<count($data); $i++){
-        $temp = [];
-        for($j = 0; $j < count($keys); $j++){
-            $temp[$keys[$j]] = $data[$i][$j];
+    function transformData($data){
+        $ret = [];
+        $keys = $data[0];
+        for($i = 1; $i<count($data); $i++){
+            $temp = [];
+            for($j = 0; $j < count($keys); $j++){
+                $temp[$keys[$j]] = $data[$i][$j];
+            }
+            array_push($ret, $temp);
         }
-        array_push($ret, $temp);
+        return $ret;
     }
-    return $ret;
-}
 
 ?>
